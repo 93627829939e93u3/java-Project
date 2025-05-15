@@ -23,8 +23,7 @@ The project is structured using object-oriented programming principles and is id
 - Clean code structure with packages and classes
 - Error handling and validation
 - Reusable components
-- [Add or remove features based on the project type]
-
+  
 ---
 
 ## 🔧 Installation & Setup
