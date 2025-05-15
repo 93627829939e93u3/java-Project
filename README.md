@@ -2,7 +2,7 @@
 
 ## 📋 Project Overview
 
-This is a Java-based application designed to [describe your project's purpose, e.g., manage records, perform calculations, create a game, etc.].
+This is a Java-based application designed to [project's purpose, e.g., manage records, perform calculations, create a game, etc.].
 
 The project is structured using object-oriented programming principles and is ideal for learning, academic, or real-world Java development.
 
