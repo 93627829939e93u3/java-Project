@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 class game {
     int num, input;
-    int i = 1;
+    int i = 0;
 
     public game(int n) {
         num = n;
@@ -17,32 +17,40 @@ class game {
 
     public int userInput() {
         // input=inputNum;
-        Scanner input1 = new Scanner(System.in);
-        System.out.println();
-        System.out.println(i + ". Guess The number: ");
-        int input = input1.nextInt();
-        return input;
+        System.out.printf("%d. Enter the number: ", i + 1);
+        Scanner input = new Scanner(System.in);
+        // System.out.println();
+        // System.out.println(i + ". Guess The number: ");
+        // int input = input1.nextInt();
+        i++;
+        return input.nextInt();
+
     }
 
-    public void ifNumberDitect() {
-        while (i <= 100) {
-            int input = userInput();
-            if (num == input) {
-                System.out.println("User are win");
-                break;
-            } else {
+    public boolean ifNumberDitect(int input1) {
 
-                if (num <= input) {
-                    System.out.println("Guess the small number");
+        // input1 = userInput();
+        if (num == input1) {
+            System.out.println("You win");
+            return true;
 
-                } else if (num >= input) {
-                    System.out.println("Guess the big number");
-                }
-            }
-            i++;
         }
-        System.out.println("you are win in " + i + " Guesses");
 
+        else if (num < input1) {
+            System.out.println("Guess the small number");
+
+        } else if (num > input1) {
+            System.out.println("Guess the big number");
+        }
+
+        return false;
+
+        // System.out.println("you are win in " + i + " Guesses");
+
+    }
+
+    int totalGuess() {
+        return i;
     }
 
 }
@@ -50,11 +58,32 @@ class game {
 public class numberGuess_Game {
 
     public static void main(String[] args) {
-
+        System.out.println("Welcome to the Number Guessing Game!");
         int computer = new Random().nextInt(100) + 1;
         Random rand = new Random();
         game g = new game(computer);
-        // g.userInput();
-        g.ifNumberDitect();
+        // System.out.println(computer);
+        // int i = 1;
+
+        // while (i <= 100) {
+        // System.out.println(i + ". Enter the Number : ");
+        // int input = g.userInput();
+        // int ditect=g.ifNumberDitect(input);
+
+        // if (computer == input) {
+        // break;
+        // }
+        // i++;
+        // }
+
+        boolean ditect = false;
+
+        while (!ditect) {
+            int input = g.userInput();
+            ditect = g.ifNumberDitect(input);
+        }
+
+        System.out.println("you are win in " + g.totalGuess() + " Guesses");
+
     }
 }
